@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platinum Liquors - Premium Home</title>
+    
+    <!-- Link separate Home CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="supabase-config.local.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
+    <script src="supabase-client.js"></script>
+
+<script>
+    // Upgraded Blocker Script: Allows a fraction of a second for session initialization
+    (async () => {
+        const client = window.supabaseClient || window.supabaseAuthClient;
+        if (!client) {
+            return;
+        }
+
+        await new Promise(resolve => setTimeout(resolve, 500));
+
+        const { data: { session } } = await client.auth.getSession();
+        if (!session) {
+            alert("ACCESS DENIED: Please register or log in first to view this page.");
+            window.location.href = 'login.html';
+        }
+    })();
+</script>
+
+</head>
+<body>
+    <!-- TRENDY IMAGE INTRO OVERLAY (DISAPPEARS VIA ANIMATION) -->
+    <div id="intro-screen" class="intro-overlay">
+        <div class="intro-content-wrapper">
+            <h1 class="intro-text">Welcome to Platinum Liquors!</h1>
+            <div class="intro-line"></div>
+        </div>
+    </div>
+
+    <!-- MAIN HOMEPAGE HEADER NAVIGATION (FIXED AT THE TOP) -->
+    <header class="header-nav">
+        <div class="brand-logo">
+            <!-- Sleek Wine & Spirits Bottle + Glass Vector Logo -->
+            <svg class="liquor-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 2h6v3H9z" />
+                <path d="M7 9v11a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a4 4 0 0 0-4-4h-2a4 4 0 0 0-4 4z" />
+                <path d="M7 13h10" />
+                <path d="M19 11l1 7a2 2 0 0 1-2 2h-1" />
+            </svg>
+            <span>Platinum Liquors</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Login</a>
+            <a href="home.html" class="active">Home</a>
+            <a href="catalog.html">Catalog</a>
+            <a href="checkout.html">Checkout</a>
+        </nav>
+    </header>
+
+    <!-- COOL BACKGROUND PARALLAX HERO BANNER -->
+    <main class="hero-banner">
+        <div class="hero-dark-overlay">
+            <div class="hero-inner">
+                <span class="gold-subtitle">THE ELITE DRINK EXPERIENCE</span>
+                <h2>Premium Alcohol Delivered In Nakuru</h2>
+                <p>Scroll down to explore our exclusive collection and payment pathways.</p>
+                <a href="catalog.html" class="browse-catalog-button">Shop Online Now</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- SERVICES OFFERED SECTION -->
+    <section class="services-section scroll-animate">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>⚡ On-Demand Delivery</h3>
+                <p>Chilled drinks at your doorstep within 45 minutes anywhere in Nakuru.</p>
+            </div>
+            <div class="service-card">
+                <h3>🍾 Corporate & Events</h3>
+                <p>Bulk supply for graduation parties, corporate meetups, and weddings at custom rates.</p>
+            </div>
+            <div class="service-card">
+                <h3>🍷 Rare Bottle Sourcing</h3>
+                <p>Looking for a specific limited-edition vintage or rare scotch? We source it for you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALCOHOL SHOWCASE IMAGE HIGHLIGHT SECTION -->
+    <section class="showcase-section scroll-animate">
+        <div class="showcase-container">
+            <div class="showcase-text">
+                <h2>Exquisite Aesthetic, Pure Quality</h2>
+                <p>We work directly with official distributors to ensure 100% genuine products. From premium single malts to local crisp gin favorites, our bottles arrive pristine.</p>
+            </div>
+            <div class="showcase-image-box">
+                <img src="images/showcase home page.jpg" alt="Premium Bottles Display" class="hover-zoom-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- 50/50 SECURE SPLIT PAYMENT BLOCK -->
+    <section class="payment-info-section scroll-animate">
+        <div class="payment-card-glass">
+            <h2>The Platinum 50/50 Guarantee 🔒</h2>
+            <p class="payment-sub">Safe. Reliable. Business built on mutual trust.</p>
+            <div class="split-display">
+                <div class="split-box">
+                    <h4>50% Upfront</h4>
+                    <p>Triggered via safe M-Pesa STK Push on checkout to secure and dispatch riders.</p>
+                </div>
+                <div class="split-divider"></div>
+                <div class="split-box">
+                    <h4>50% On Arrival</h4>
+                    <p>Pay the remaining balance via cash or M-Pesa only after inspecting your chilled order.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OWNER CONTACT & SOCIAL MEDIA LINK FOOTER -->
+    <footer class="footer-box scroll-animate">
+        <h2>Platinum Digital Portal</h2>
+        <p>Connect with operations directly or stay updated on new stock arrivals.</p>
+        
+        <div class="social-channels-grid">
+            <a href="https://wa.25495499535" target="_blank" class="channel-btn whatsapp">
+                Chat on WhatsApp
+            </a>
+            <a href="https://instagram.com/s.k.y_s.k.y.l.e.r" target="_blank" class="channel-btn instagram">
+                Follow on Instagram
+            </a>
+            <a href="https://tiktok.com/@skyler_vivian12" target="_blank" class="channel-btn tiktok">
+                Follow on TikTok
+            </a>
+        </div>
+        <p class="copyright-tag">© 2026 Platinum Liquors. Access restricted to 18+ individuals only.</p>
+    </footer>
+
+    <!-- Link your separate Animation Script -->
+    <script src="home.js"></script>
+</body>
+</html>

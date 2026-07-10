@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platinum Liquors - Secure Checkout</title>
+    <!-- Combined Style Sheet Integration -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Supabase Core Global Library Dependency CDN -->
+    <script src="supabase-config.local.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
+    <script src="supabase-client.js"></script>
+    <script>
+        // Blocker Script: Restricts access to signed-in users only
+        (async () => {
+            const client = window.supabaseClient || window.supabaseAuthClient;
+            if (!client) {
+                return;
+            }
+
+            // Allow half a second for the local browser token session to initialize
+            await new Promise(resolve => setTimeout(resolve, 500));
+
+            const { data: { session } } = await client.auth.getSession();
+            if (!session) {
+                alert("ACCESS DENIED: Please register or log in first to view this page.");
+                window.location.href = 'login.html';
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- STICKY PLATINUM NAV BAR HEADER -->
+    <header class="platinum-sticky-header">
+        <div class="brand-logo">
+           <!-- Sleek Wine & Spirits Bottle + Glass Vector Logo -->
+            <svg class="liquor-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 2h6v3H9z" />
+                <path d="M7 9v11a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a4 4 0 0 0-4-4h-2a4 4 0 0 0-4 4z" />
+                <path d="M7 13h10" />
+                <path d="M19 11l1 7a2 2 0 0 1-2 2h-1" />
+            </svg> 
+         <span>PLATINUM LIQUORS</span>
+        </div>
+        <nav class="header-nav-links">
+            <a href="home.html">Home</a>
+            <a href="catalog.html">Catalog</a>
+            <a href="checkout.html" class="active">Checkout</a>
+            </nav>
+    </header>
+
+    <!-- MAIN CHECKOUT AREA -->
+    <main class="checkout-page-wrapper">
+        <div class="checkout-grid-layout">
+            
+            <!-- LEFT COLUMN: CART SUMMARY REVIEW -->
+            <div class="checkout-card-panel">
+                <span class="checkout-tag-chip">Order Review</span>
+                <h3 class="checkout-section-title">Your Shopping Basket</h3>
+                <div id="checkout-items-list-container">
+                    <p class="empty-cart-notice">Reading your cart contents...</p>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: 50% PAYMENT & DELIVERY INPUTS -->
+            <div class="checkout-card-panel">
+                <span class="checkout-tag-chip">Payment Gateway</span>
+                <h3 class="checkout-section-title">Secure M-Pesa Deposit</h3>
+                
+                <!-- Dynamic Financial Summary -->
+                <div class="pricing-breakdown-box">
+                    <div class="price-row">
+                        <span>Total Bill Value:</span>
+                        <strong>KES <span id="bill-total-val">0</span></strong>
+                    </div>
+                    <div class="price-row golden-highlight-row">
+                        <span>M-Pesa Deposit Due (50%):</span>
+                        <strong>KES <span id="bill-deposit-val">0</span></strong>
+                    </div>
+                    <div class="price-row balance-row">
+                        <span>Pay on Delivery Balance (50%):</span>
+                        <span>KES <span id="bill-balance-val">0</span></span>
+                    </div>
+                </div>
+
+                <!-- Input Submission Form -->
+                <form id="checkout-processing-form" onsubmit="triggerMpesaPaymentDeposit(event)">
+                    <div class="checkout-form-row">
+                        <label for="cust-delivery-name" class="checkout-control-lbl">Full Delivery Name:</label>
+                        <input type="text" id="cust-delivery-name" name="cust-delivery-name" class="checkout-input-element" placeholder="e.g. Jane Doe" required>
+                    </div>
+
+                    <div class="checkout-form-row">
+                        <label for="cust-mpesa-phone" class="checkout-control-lbl">M-Pesa Mobile Number:</label>
+                        <input type="tel" id="cust-mpesa-phone" name="cust-mpesa-phone" class="checkout-input-element" placeholder="e.g. 254712345678" required>
+                        <small class="field-input-tip">Must begin with the 254 country code code format.</small>
+                    </div>
+
+                    <div class="checkout-form-row">
+                        <label for="cust-delivery-address" class="checkout-control-lbl">Detailed Dropoff Address:</label>
+                        <textarea id="cust-delivery-address" name="cust-delivery-address" class="checkout-input-element" placeholder="Apartment name, House number, Street, Estate or Area..." required style="height: 80px; resize: none;"></textarea>
+                    </div>
+
+                    <button type="submit" class="checkout-submit-custom-btn">Pay 50% Deposit Via M-Pesa</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Script Processing Link -->
+    <script src="checkout.js"></script>
+</body>
+</html>
