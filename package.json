@@ -1,5 +1,13 @@
 {
+  "name": "platinum-liquors",
+  "version": "1.0.0",
+  "description": "Platinum Liquors storefront",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
-    "@supabase/supabase-js": "^2.110.0"
+    "@supabase/supabase-js": "^2.110.0",
+    "express": "^4.21.0"
   }
 }
