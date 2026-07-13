@@ -84,7 +84,6 @@ async function triggerMpesaPaymentDeposit(event) {
         return;
     }
 
-    // --- CORRECTION ---
     // Cleans up comma character formatting strings to prevent breaking math functions
     const totalAmountScore = parseInt(document.getElementById('bill-total-val').textContent.replace(/,/g, ''));
     const depositAmountVal = totalAmountScore * 0.50;
@@ -98,7 +97,7 @@ async function triggerMpesaPaymentDeposit(event) {
 
     try {
         // --- LIVE MPESA INTERFACE LINK FULLY FIXED ---
-        const mpesaResponse = await fetch("https://zogdzaazwfiegcbxopqp.supabase.co", {
+        const mpesaResponse = await fetch("https://zogdzaazwfiegcbxopqp.supabase.co/functions/v1/smooth-service", {
             method: "POST",
             headers: { 
                 "Content-Type": "application/json" 
@@ -142,8 +141,7 @@ async function triggerMpesaPaymentDeposit(event) {
                 balance_on_delivery: balanceAmountVal,
                 mpesa_checkout_id: safaricomCheckoutId, 
                 payment_status: 'Pending PIN Verification' 
-            }])
-            .select();
+            }]);
 
         if (orderError) {
             console.error("Database Order Storage Crash: ", orderError.message);
