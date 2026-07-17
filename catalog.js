@@ -1,4 +1,3 @@
-// 1. INITIALIZE CLIENT CONFIGURATION CONNECTION TO SUPABASE
 // The site is using plain browser scripts, so the client is read from the global window object.
 const supabaseClient = window.supabaseClient;
 

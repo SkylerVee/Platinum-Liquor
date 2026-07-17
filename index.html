@@ -1,94 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platinum Liquors </title>
-    <meta name="description" content="Order premium Liquors and selections online with platinum Liquors. Fast delivery anywhere in Nakuru and surrounding areas with secure 50% M-pesa deposit checkout">
-    <meta name="keywords" content="Located at Kabazi Centre, Nakuru">
-    <meta name="keywords" content="Platinum Liquors, alcohol delivery in Nakuru, buy liquor online Kenya, premium drinks">
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="wLyIoad05rFJQCgA-hmbkXI5g5VAf4WJfma2KMgE30A" />
 
-<!-- 1. For Google Search & Mobile App Thumbnails -->
-    <meta name="thumbnail" content="images/store-image.jpeg" />
+  <!-- Redirect immediately to your home page layout -->
+  <meta http-equiv="refresh" content="0; url=home.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- 2. For the small Brand Icon (Favicon) next to your link -->
-    <link rel="icon" type="image/png" sizes="48x48" href="images/store-picture-thumbnail.jpeg">
-
-    <!-- 3. Social Media/Google Discover backup thumbnail -->
-    <meta property="og:image" content="images/kabazi-scope.jpeg" />
-
-    <!-- External CSS Style Sheet Link -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Supabase Core Global Library Dependency CDN -->
-    <script src="public/config.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
+  <title>Platinum Liquors</title>
+  <meta name="description" content="Order premium Liquors online anywhere in Nakuru with Platinum Liquors.">
+  
+  <!-- Absolute URLs for Google Thumbnail Recognition -->
+  <link rel="image_src" href="https://platinum-liquor-production.up.railway.app/images/store-image.jpeg" />
+  <meta name="thumbnail" content="https://platinum-liquor-production.up.railway.app/images/store-image.jpeg" />
+  <link rel="icon" type="image/png" sizes="48x48" href="images/store-picture-thumbnail.jpeg">
+  <meta property="og:image" content="https://platinum-liquor-production.up.railway.app/images/kabazi-scope.jpeg" />
 </head>
-<body class="login-page-body">
-
-    <!-- STICKY PLATINUM PLATFORM HEADER -->
-    <header class="platinum-sticky-header">
-         <div class="brand-logo">
-            <svg class="liquor-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 2h6v3H9z" />
-                <path d="M7 9v11a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a4 4 0 0 0-4-4h-2a4 4 0 0 0-4 4z" />
-                <path d="M7 13h10" />
-                <path d="M19 11l1 7a2 2 0 0 1-2 2h-1" />
-            </svg>
-            <span>PLATINUM LIQUORS</span>
-        </div>
-        <nav class="header-nav-links">
-            <a href="home.html">Home</a>
-            <a href="catalog.html">Catalog</a>
-            <a href="checkout.html">Checkout</a>
-        </nav>
-    </header>
-
-    <!-- CORE TRANSACTION AUTH CONTAINER CARD -->
-    <div class="auth-container-card">
-        <div class="toggle-tab-group">
-            <button id="tab-login" class="tab-btn active" onclick="switchAuthView('login')">Returning Customer</button>
-            <button id="tab-register" class="tab-btn" onclick="switchAuthView('register')">New Customer</button>
-        </div>
-
-        <!-- RETURNING CUSTOMER LOG IN BLOCK -->
-        <form id="form-login-block" onsubmit="executeCustomerLogin(event)">
-            <div class="form-row">
-                <label for="login-email">Email Address</label>
-                <input type="email" id="login-email" name="username" autocomplete="email" required placeholder="name@domain.com">
-            </div>
-            <div class="form-row">
-                <label for="login-password">Password</label>
-                <input type="password" id="login-password" name="password" autocomplete="current-password" required placeholder="••••••••">
-            </div>
-            <button type="submit" class="action-submit-btn">ACCESS PLATFORM</button>
-        </form>
-
-        <!-- FIRST TIME ACCOUNT REGISTRATION BLOCK -->
-        <form id="form-register-block" class="hidden-panel" onsubmit="executeCustomerRegistration(event)">
-            <div class="form-row">
-                <label for="reg-name">Your Name</label>
-                <input type="text" id="reg-name" required placeholder="John Doe">
-            </div>
-            <div class="form-row">
-                <label for="reg-email">Email Address</label>
-                <input type="email" id="reg-email" name="username" autocomplete="email" required placeholder="yourname@email.com">
-            </div>
-            <div class="form-row">
-                <label for="reg-password">Create New Password</label>
-                <input type="password" id="reg-password" name="password" autocomplete="new-password" minlength="6" required placeholder="At least 6 letters & numbers mixed">
-            </div>
-            <div class="form-row">
-                <label for="reg-confirm-password">Confirm Password</label>
-                <input type="password" id="reg-confirm-password" required placeholder="Re-enter password">
-                <small class="field-hint-text">Must be at least 6 characters long and include a mix of words and numbers.</small>
-            </div>
-            <button type="submit" class="action-submit-btn">REGISTER ACCOUNT</button>
-        </form>
-    </div>
-
-    <!-- Shared Supabase client bootstrap -->
-    <script src="supabase-client.js"></script>
-    <script src="index.js"></script>
-
+<body>
+  <script>
+    // JavaScript backup redirect straight to your home screen
+    window.location.replace('home.html');
+  </script>
 </body>
 </html>
