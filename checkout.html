@@ -4,33 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Platinum Liquors</title>
-    <meta name="description" content="Order premium Liquors and selections online with platinum Liquors. Fast delivery anywhere in Nakuru and surrounding areas with secure 50% M-pesa deposit checkout">
+    <meta name="description" content="Order premium Liquors online anywhere in Nakuru with Platinum Liquors.">
     <meta name="keywords" content="Platinum Liquors, alcohol delivery in Nakuru, buy liquor online Kenya, premium drinks">
+
+    <!-- 1. For Google Search & Mobile App Thumbnails (Updated to Absolute Domain) -->
+    <meta name="thumbnail" content="https://platinum-liquor-production.up.railway.app/images/store-image.jpeg" />
+
+    <!-- 2. For the small Brand Icon (Favicon) next to your link -->
+    <link rel="icon" type="image/png" sizes="48x48" href="images/store-picture-thumbnail.jpeg">
+
+    <!-- 3. Social Media/Google Discover backup thumbnail (Updated to Absolute Domain) -->
+    <meta property="og:image" content="https://platinum-liquor-production.up.railway.app/images/kabazi-scope.jpeg" />
+    <link rel="image_src" href="https://platinum-liquor-production.up.railway.app/images/store-image.jpeg" />
 
     <!-- Combined Style Sheet Integration -->
     <link rel="stylesheet" href="style.css">
+    
     <!-- Supabase Core Global Library Dependency CDN -->
     <script src="public/config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
     <script src="supabase-client.js"></script>
-    <script>
-        // Blocker Script: Restricts access to signed-in users only
-        (async () => {
-            const client = window.supabaseClient || window.supabaseAuthClient;
-            if (!client) {
-                return;
-            }
-
-            // Allow half a second for the local browser token session to initialize
-            await new Promise(resolve => setTimeout(resolve, 500));
-
-            const { data: { session } } = await client.auth.getSession();
-            if (!session) {
-                alert("ACCESS DENIED: Please register or log in first to view this page.");
-                window.location.href = 'login.html';
-            }
-        })();
-    </script>
 </head>
 <body>
 
@@ -50,7 +43,7 @@
             <a href="home.html">Home</a>
             <a href="catalog.html">Catalog</a>
             <a href="checkout.html" class="active">Checkout</a>
-            </nav>
+        </nav>
     </header>
 
     <!-- MAIN CHECKOUT AREA -->

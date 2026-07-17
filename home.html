@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platinum Liquors</title>
-    <meta name="description" content="Order premium Liquors and selections online with platinum Liquors. Fast delivery anywhere in Nakuru and surrounding areas with secure 50% M-pesa deposit checkout">
+    <title>Platinum Liquors</title>Nakuru
+    <meta name="description" content="Order premium Liquors online anywhere in Nakuru with Platinum Liquors.">
     <meta name="keywords" content="Platinum Liquors, alcohol delivery Nakuru, buy liquor online Kenya, premium drinks">
 
-    <!-- 1. For Google Search & Mobile App Thumbnails -->
-    <meta name="thumbnail" content="images/store-image.jpeg" />
+    <!-- 1. For Google Search & Mobile App Thumbnails (Updated to Absolute Path) -->
+    <meta name="thumbnail" content="https://platinum-liquor-production.up.railway.app/images/store-image.jpeg" />
 
     <!-- 2. For the small Brand Icon (Favicon) next to your link -->
     <link rel="icon" type="image/png" sizes="48x48" href="images/store-picture-thumbnail.jpeg">
 
-    <!-- 3. Social Media/Google Discover backup thumbnail -->
-    <meta property="og:image" content="images/kabazi-scope.jpeg" />
-    
+    <!-- 3. Social Media/Google Discover backup thumbnail (Updated to Absolute Path) -->
+    <meta property="og:image" content="https://platinum-liquor-production.up.railway.app/images/kabazi-scope.jpeg" />
+    <link rel="image_src" href="https://platinum-liquor-production.up.railway.app/images/store-image.jpeg" />
     
     <!-- Link separate Home CSS Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -23,27 +23,9 @@
     <script src="public/config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
     <script src="supabase-client.js"></script>
-
-<script>
-    // Upgraded Blocker Script: Allows a fraction of a second for session initialization
-    (async () => {
-        const client = window.supabaseClient || window.supabaseAuthClient;
-        if (!client) {
-            return;
-        }
-
-        await new Promise(resolve => setTimeout(resolve, 500));
-
-        const { data: { session } } = await client.auth.getSession();
-        if (!session) {
-            alert("ACCESS DENIED: Please register or log in first to view this page.");
-            window.location.href = 'login.html';
-        }
-    })();
-</script>
-
 </head>
-<body>
+<body class="home-page-body">
+
     <!-- TRENDY IMAGE INTRO OVERLAY (DISAPPEARS VIA ANIMATION) -->
     <div id="intro-screen" class="intro-overlay">
         <div class="intro-content-wrapper">
